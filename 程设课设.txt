@@ -1,0 +1,56 @@
+一、I型指令
+1、内存指令
+lb R1 R2 10   从R2中偏移10往后读取一个字节的数据，到内存文件中找地址对应的数，存到R1（存储器存到寄存器）
+lw R1 R2 10   从R2中偏移10往后读取一个字（4个字节）的数据，到内存文件中找地址对应的数，存到R1
+sb R1 R2 10   从R2中偏移10往后读取一个字节的数据，到内存文件中找地址，将R1的数存入（寄存器存到存储器）
+sw R1 R2 10   从R2中偏移10往后读取一个字（4个字节）的数据，到内存文件中找地址，将R1的数存入
+
+2、算术及位运算指令
+addi R1 R2 100  R1=R2+100
+subi R1 R2 100  R1=R2-100
+andi R1 R2 100  R1=R2&100
+ori R1 R2 100   R1=R2|100
+xori R1 R2 100  R1=R2^100
+3、测试指令
+sgti R1 R2 10	if(R2>10) R1=1 else R1=0
+seqi R1 R2 10	if(R2=10) R1=1 else R1=0
+sgei R1 R2 10	if(R2>=10) R1=1 else R1=0
+slti R1 R2 10	if(R2<10) R1=1 else R1=0
+snei R1 R2 10	if(R2!=10) R1=1 else R1=0
+slei R1 R2 10	if(R2<=10) R1=1 else R1=0
+4、控制指令
+beqz R1 10   当寄存器R1中的内容为0时，PC+10（往下数十个指令再执行）
+bnez R1 10   当寄存器R1中的内容不为0时，PC+10（往下数十个指令再执行）
+bnez/beqz R1 label  当寄存器R1中的内容为0/不为0时，跳转至标签label处
+jr  R1       跳转指令，相对于R1当前地址跳转R1中内容的步数
+jr label     跳转至标签label处
+二、R型指令
+1、算术及位运算指令
+add R1 R2 R3     R1=R2+R3
+sub R1 R2 R3     R1=R2-R3
+and R1 R2 R3     R1=R2&R3
+or R1 R2 R3      R1=R2|R3
+xor R1 R2 R3     R1=R2^R3
+2、移位指令
+slli R1 R2 10    R1=R2<<10
+srli R1 R2 10    R1=R2>>10
+3、测试指令
+sgt R1 R2 R3	 if(R2>R3) R1=1 else R1=0
+seq R1 R2 R3	 if(R2=R3) R1=1 else R1=0
+sge R1 R2 R3	 if(R2>=R3) R1=1 else R1=0
+slt R1 R2 R3     if(R2<R3) R1=1 else R1=0
+sne R1 R2 R3	 if(R2!=R3) R1=1 else R1=0
+sle R1 R2 R3	 if(R2<=R3) R1=1 else R1=0
+
+op R1    输出寄存器R1的内容
+op R1 10 输出R1内容偏移10个字节对应内存地址的数据
+halt     停机
+
+
+
+
+*********************************************************************
+				
+
+
+
